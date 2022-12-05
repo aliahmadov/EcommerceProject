@@ -45,7 +45,7 @@ namespace ECommerce.DataAccess.SqlServer
     #endregion
 		
 		public ECommerceDataClassesDataContext() : 
-				base(global::ECommerce.Properties.Settings.Default.ECommerceDbConnectionString, mappingSource)
+				base(global::ECommerce.Properties.Settings.Default.ECommerceDbConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
