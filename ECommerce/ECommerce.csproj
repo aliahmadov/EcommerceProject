@@ -59,6 +59,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Domain\ViewModels\AdminHomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Domain\Views\AdminShowOrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Domain\Views\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Domain\Views\InsertWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Domain\Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,11 +98,30 @@
     <Compile Include="Domain\Abstractions\IOrderRepository.cs" />
     <Compile Include="Domain\Abstractions\IProductRepository.cs" />
     <Compile Include="Domain\Abstractions\IRepository.cs" />
+    <Compile Include="Domain\Models\OrderModel.cs" />
     <Compile Include="Domain\Services\CustomerService.cs" />
+    <Compile Include="Domain\Services\OrderService.cs" />
     <Compile Include="Domain\Services\ProductService.cs" />
+    <Compile Include="Domain\ViewModels\AddProductViewModel.cs" />
+    <Compile Include="Domain\ViewModels\AdminHomeViewModel.cs" />
+    <Compile Include="Domain\ViewModels\AdminHomeWindow.xaml.cs">
+      <DependentUpon>AdminHomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\ViewModels\AdminShowOrderViewModel.cs" />
+    <Compile Include="Domain\ViewModels\AdminUpdateViewModel.cs" />
+    <Compile Include="Domain\ViewModels\AdminViewModel.cs" />
     <Compile Include="Domain\ViewModels\BaseViewModel.cs" />
     <Compile Include="Domain\ViewModels\MainViewModel.cs" />
     <Compile Include="Domain\ViewModels\ProductInfoViewModel.cs" />
+    <Compile Include="Domain\Views\AdminShowOrderWindow.xaml.cs">
+      <DependentUpon>AdminShowOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Views\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Views\InsertWindow.xaml.cs">
+      <DependentUpon>InsertWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Domain\Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -95,10 +130,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Domain\Views\UpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Views\ProductWindow.xaml.cs">
       <DependentUpon>ProductWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Views\UpdateWindow.xaml.cs">
+      <DependentUpon>UpdateWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -139,7 +181,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\AdditionalClasses\" />
-    <Folder Include="Domain\Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

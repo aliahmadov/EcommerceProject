@@ -1,4 +1,5 @@
 ﻿using ECommerce.Domain.Abstractions;
+using ECommerce.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +11,7 @@ namespace ECommerce.DataAccess.SqlServer
 {
     public class OrderRepository : IOrderRepository
     {
-        private ECommerceDataClassesDataContext _dataContext;
+        private static ECommerceDataClassesDataContext _dataContext;
         public OrderRepository()
         {
             _dataContext = new ECommerceDataClassesDataContext();

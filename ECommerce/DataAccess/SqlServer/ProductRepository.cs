@@ -41,7 +41,7 @@ namespace ECommerce.DataAccess.SqlServer
 
         public void UpdateData(Product data)
         {
-            var item=_dataContext.Products.SingleOrDefault(p => p.Id == data.Id);
+            var item=_dataContext.Products.FirstOrDefault(p => p.Id == data.Id);
             item = new Product
             {
                 Name = data.Name,

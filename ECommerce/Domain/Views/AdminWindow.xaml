@@ -1,38 +1,14 @@
-﻿<Window x:Class="ECommerce.MainWindow"
+﻿<Window x:Class="ECommerce.Domain.Views.AdminWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ECommerce" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:ECommerce.Domain.Views" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Name="MyWindow">
+        Title="AdminWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <Border BorderThickness="0,0,0,5" BorderBrush="Orange">
-
-                <StackPanel Width="800" Orientation="Horizontal" >
-                    <TextBlock Foreground="Orange" Padding="10" HorizontalAlignment="Center" FontSize="30" FontFamily="Comic Sans MS" >E-Commerce App</TextBlock>
-                    <Button
-                        Command="{Binding ToLowerCommand}"
-                    Content="{Binding FilterText,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
-                    Background="Orange" 
-                    Padding="20" 
-                    Foreground="White"
-                    FontWeight="ExtraBlack"
-                    BorderThickness="0"
-                    FontSize="25"></Button>
-                    <Button Command="{Binding AdminCommand}"
-                    Margin="20,0,0,0"
-                    Content="Admin" 
-                    Background="Orange" 
-                    Padding="20" 
-                    Foreground="White"
-                    FontWeight="ExtraBlack"
-                    BorderThickness="0"
-                    FontSize="25"></Button>
-                </StackPanel>
-            </Border>
-
+            <Label FontSize="34" Foreground="Black" FontFamily="Comic Sans MS" FontWeight="Bold">Products</Label>
             <ListView 
                 ItemsSource="{Binding AllProducts}" SelectedItem="{Binding SelectedProduct}"
                 Padding="10" Background="White" BorderBrush="Orange" BorderThickness="5,0,5,5">
@@ -71,9 +47,32 @@
                 </ListView.View>
             </ListView>
 
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Command="{Binding AddProductCommand}" Padding="10" Background="DarkOrange" Foreground="White" Margin="10" FontSize="25"
+                        FontWeight="Bold"
+                        >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10">
+                                
+                            </Setter>
+                        </Style>
+                    </Button.Resources>
+                    Add Product</Button>
 
-          
-            
+                <Button Command="{Binding UpdateProductCommand}" Padding="10" Background="DarkOrange" Foreground="White" Margin="10" FontSize="25"
+                        FontWeight="Bold"
+                        >
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10">
+
+                            </Setter>
+                        </Style>
+                    </Button.Resources>
+                    Update Product
+                </Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
